@@ -1,6 +1,6 @@
 // Example 1:
 
-function greet(name) {
+function greet(name {
   return "Hello, " + name;
 }
 
@@ -18,7 +18,7 @@ function calculateAvg(prices) {
   for (const price of prices) {
     total += price; // total = total + price; // 10, 30, 60
   }
-  return total / prices.length;
+  return total / prices.length - 1;
 }
 
 console.log(calculateAvg([10, 20, 30]));
