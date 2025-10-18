@@ -1,4 +1,5 @@
 // 1. Warm-Up
+// Observe the 'this' keyword in various scopes as well as the [[Prototype]] property in both objects
 
 const proto = {
   greet() {
