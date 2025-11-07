@@ -98,5 +98,3 @@ function traverseDOM(node) {
     traverseDOM(child);
   }
 }
-
-traverseDOM(root)
