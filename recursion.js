@@ -8,14 +8,12 @@ function countdown(n) {
   countdown(n - 1);
 }
 
-
 // Reverse a string
 function reverseString(str) {
   if (str.length <= 1) return str;
-  console.log('str:', str)
-   reverseString(str.slice(1)) + str[0];
+  console.log("str:", str);
+  reverseString(str.slice(1)) + str[0];
 }
-
 
 // Factorial - non-TCO
 function factorial(n) {
@@ -29,28 +27,27 @@ function factorialTCO(n, acc = 1) {
   return factorialTCO(n - 1, acc * n);
 }
 
-
 // Count Items in a Nested Object:
 // You’re given a nested object of folders and files.
 // Write a recursive function countFiles(folder) that counts all files in all nested folders.
 
 const folder = {
   name: "root",
-  files: ["a.txt", "b.txt"],
+  files: ["index.html", "style.css"],
   folders: [
     {
-      name: "photos",
-      files: ["img1.jpg", "img2.jpg"],
-      folders: []
+      name: "src",
+      files: ["app.js", "utils.js"],
+      folders: [],
     },
     {
-      name: "docs",
+      name: "server",
       files: [],
       folders: [
-        { name: "taxes", files: ["2024.pdf"], folders: [] }
-      ]
-    }
-  ]
+        { name: "controllers", files: ["swapiController.js"], folders: [] },
+      ],
+    },
+  ],
 };
 
 // Solution:
@@ -60,7 +57,6 @@ function countFiles(folder) {
 }
 
 
-
 // Flatten a Deeply Nested Array
 // Ex) flatten(arr) ➜ [1, 2, 3, 4, 5, 6]
 
@@ -68,3 +64,40 @@ function countFiles(folder) {
 
 // use the following array to test your function
 const arr = [1, [2, [3, [4, 5]]], 6];
+
+/* 
+DOM Traversal (real-life scenario):
+Imagine the DOM:
+
+<div id="root">
+  <p>
+    <span></span>
+  </p>
+  <section></section>
+</div>
+
+
+DOM tree:
+
+div (id="root")
+├── p
+│   └── span
+└── section
+
+*/
+function traverseDOM(node) {
+  if (!node) return;
+
+  console.log(node.tagName);
+
+  const children = node.children;
+  const totalChildren = children.length;
+
+  if (totalChildren === 0) return;
+
+  for (const child of children) {
+    traverseDOM(child);
+  }
+}
+
+
