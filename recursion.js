@@ -22,9 +22,9 @@ function factorial(n) {
 }
 
 // Factorial - Tail Call Optimization
-function factorialTCO(n, acc = 1) {
-  if (n === 1) return acc;
-  return factorialTCO(n - 1, acc * n);
+function factorialTCO(n, num = 1) {
+  if (n === 1) return num;
+  return factorialTCO(n - 1, num * n);
 }
 
 // Count Items in a Nested Object:
@@ -55,7 +55,6 @@ function countFiles(folder) {
   // TODO: start with base count = number of files
   // TODO: loop over subfolders and recursively add counts
 }
-
 
 // Flatten a Deeply Nested Array
 // Ex) flatten(arr) ➜ [1, 2, 3, 4, 5, 6]
@@ -100,4 +99,4 @@ function traverseDOM(node) {
   }
 }
 
-
+traverseDOM(root)
